@@ -6,6 +6,7 @@ import {
   UserIcon,
   ArrowDownIcon,
   LogOut,
+  UserName,
 } from './AuthNav.styled';
 import { selectIsLoggedIn, selectUser } from 'redux/auth/selectors';
 import { logout } from 'redux/auth/operations';
@@ -20,7 +21,7 @@ export const AuthNav = () => {
     <>
       {isLoggedIn ? (
         <Auth onClick={() => setIsOpen(!isOpen)}>
-          {<UserIcon />} {user.name}
+          {<UserIcon />} <UserName>{user.name}</UserName>
           {<ArrowDownIcon rotate={{ isOpen }} />}
           {isOpen && (
             <LogOut onClick={() => dispatch(logout())}>

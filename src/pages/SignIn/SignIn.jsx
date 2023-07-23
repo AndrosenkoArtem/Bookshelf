@@ -14,9 +14,9 @@ import {
   CloseIconCase,
 } from './SignIn.styled';
 import { ReactComponent as Email } from 'images/email.svg';
-// import { ReactComponent as Password } from 'images/password.svg';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ReactComponent as Password } from 'images/password.svg';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from 'redux/auth/operations';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
@@ -65,17 +65,12 @@ const SignIn = () => {
             </Label>
             <Label>
               <IconsCase
-                onClick={() => setIsVisiblePassword(!isVisiblePassword)}
+                onClick={e =>
+                  e.currentTarget.nextSibling.value.trim() !== '' &&
+                  setIsVisiblePassword(!isVisiblePassword)
+                }
               >
-                {isVisiblePassword ? (
-                  <IconContext.Provider value={{ size: '24px' }}>
-                    <LiaEyeSolid width="24px" height="24px" />
-                  </IconContext.Provider>
-                ) : (
-                  <IconContext.Provider value={{ size: '24px' }}>
-                    <LiaEyeSlash />
-                  </IconContext.Provider>
-                )}
+                <Password style={{ cursor: 'pointer' }} />
               </IconsCase>
               <Input
                 name="user-password"

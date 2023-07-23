@@ -13,16 +13,26 @@ import storage from 'redux-persist/lib/storage';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { authReducer } from './auth/slice';
 import { booksReducer } from './books/slice';
+import { themeReducer } from './theme/slice';
 const authPersistConfig = {
   key: 'auth',
   storage,
   whitelist: ['token'],
 };
-
+const bookPersistorConfig = {
+  key: 'books',
+  storage,
+  whitelist: ['catalogBooks'],
+};
+const themePersistorConfig = {
+  key: 'theme',
+  storage,
+};
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    books: booksReducer,
+    books: persistReducer(bookPersistorConfig, booksReducer),
+    theme: persistReducer(themePersistorConfig, themeReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

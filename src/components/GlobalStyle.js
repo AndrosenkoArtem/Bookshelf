@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
    font-family: 'DM Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
-    background-color: #F3F3F3;
+    background-color: ${props => props.theme.backgroundColor};
     -moz-osx-font-smoothing: grayscale;
   }
   html {

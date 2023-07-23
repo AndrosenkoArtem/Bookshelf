@@ -1,11 +1,26 @@
-import { Ul, P } from './AllCategories.styled';
+import { useSelector } from 'react-redux';
+import { Ul, Li } from './AllCategories.styled';
+import { selectCategories } from 'redux/books/selectors';
 
-export const AllCategories = ({ books, setCategories }) => {
+export const AllCategories = ({ setCurrentCategories, currentCategories }) => {
+  const categories = useSelector(selectCategories);
   return (
     <Ul>
-      <P>All categories</P>
-      {books.map(category => (
-        <P key={category.list_name}>{category.list_name}</P>
+      <Li
+        key="All categories"
+        className={!currentCategories && 'active'}
+        onClick={() => setCurrentCategories(null)}
+      >
+        All categories
+      </Li>
+      {categories.map(category => (
+        <Li
+          className={category === currentCategories && 'active'}
+          onClick={() => setCurrentCategories(category)}
+          key={category}
+        >
+          {category}
+        </Li>
       ))}
     </Ul>
   );

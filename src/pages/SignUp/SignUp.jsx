@@ -14,15 +14,15 @@ import {
   CloseIconCase,
 } from './SignUp.styled';
 import { ReactComponent as Email } from 'images/email.svg';
-// import { ReactComponent as Password } from 'images/password.svg';
+import { ReactComponent as Password } from 'images/password.svg';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signUp } from 'redux/auth/operations';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { LiaEyeSlash } from 'react-icons/lia';
-import { LiaEyeSolid } from 'react-icons/lia';
-import { IconContext } from 'react-icons';
+// import { LiaEyeSlash } from 'react-icons/lia';
+// import { LiaEyeSolid } from 'react-icons/lia';
+// import { IconContext } from 'react-icons';
 const SignUp = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -58,12 +58,11 @@ const SignUp = () => {
                 onChange={e => setUserName(e.target.value)}
                 value={userName}
                 maxLength="30"
+                autocomplete="new-password"
               />
             </Label>
             <Label>
-              <IconsCase>
-                <Email />
-              </IconsCase>
+              <IconsCase>{<Email />}</IconsCase>
               <Input
                 name="user-email"
                 type="email"
@@ -71,21 +70,17 @@ const SignUp = () => {
                 required="requaried"
                 onChange={e => setEmail(e.target.value)}
                 value={email}
+                autocomplete="new-password"
               />
             </Label>
             <Label>
               <IconsCase
-                onClick={() => setIsVisiblePassword(!isVisiblePassword)}
+                onClick={e =>
+                  e.currentTarget.nextSibling.value.trim() !== '' &&
+                  setIsVisiblePassword(!isVisiblePassword)
+                }
               >
-                {isVisiblePassword ? (
-                  <IconContext.Provider value={{ size: '24px' }}>
-                    <LiaEyeSolid width="24px" height="24px" />
-                  </IconContext.Provider>
-                ) : (
-                  <IconContext.Provider value={{ size: '24px' }}>
-                    <LiaEyeSlash />
-                  </IconContext.Provider>
-                )}
+                <Password />
               </IconsCase>
               <Input
                 name="user-password"
@@ -94,6 +89,7 @@ const SignUp = () => {
                 required="requaried"
                 onChange={e => setPassword(e.target.value)}
                 value={password}
+                autocomplete="new-password"
               />
             </Label>
             <Submit type="submit">SIGN UP</Submit>

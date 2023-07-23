@@ -5,40 +5,62 @@ export const H1 = styled.h1`
   line-height: 52px; /* 108.333% */
   letter-spacing: -1.92px;
   margin-bottom: 40px;
+  color: ${props => props.theme.titleColor};
 `;
 export const PurpleParticle = styled.span`
   color: ${props => props.theme.purpleColor};
 `;
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 998px;
+  margin-left: auto;
+  margin-bottom: 100px;
+`;
 export const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    transform: scale(0.95);
-  }
 `;
 export const ImagesContainer = styled.div`
+  position: relative;
   overflow: hidden;
   width: 180px;
   height: 265px;
   margin-bottom: 14px;
   border-radius: 8px;
+  cursor: pointer;
+  &:hover p {
+    transform: translate(0);
+    pointer-events: all;
+  }
+`;
+export const QuickView = styled.p`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 26px 0px;
+  background-color: ${props => props.theme.yellowColor};
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 `;
 export const BooksContainer = styled.ul`
-  display: flex;
+  display: grid;
+  grid-gap: 40px 24px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 `;
 export const BooksColections = styled.li`
   &:not(:last-of-type) {
     margin-bottom: 40px;
   }
 `;
-export const Book = styled.li`
-  &:not(:last-of-type) {
-    margin-right: 24px;
-  }
-`;
+export const Book = styled.li``;
 export const ColectionsTitle = styled.p`
   margin-bottom: 18px;
   color: #b4afaf;
@@ -50,7 +72,7 @@ export const ColectionsTitle = styled.p`
 `;
 export const TitleBook = styled.p`
   margin-bottom: 4px;
-  color: ${props => props.theme.blackColor};
+  color: ${props => props.theme.titleColor};
   font-size: 16px;
   font-weight: 700;
   line-height: 18px; /* 112.5% */
@@ -65,7 +87,6 @@ export const AuthorBook = styled.p`
   font-weight: 400;
   line-height: 14px; /* 116.667% */
   letter-spacing: -0.48px;
-  margin-bottom: 32px;
   max-width: 180px;
 `;
 export const Button = styled.button`

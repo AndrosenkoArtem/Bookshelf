@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 export const H1 = styled.h1`
+  color: ${props => props.theme.titleColor};
   font-size: 48px;
   font-weight: 700;
   line-height: 52px; /* 108.333% */
@@ -13,22 +14,43 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: auto;
+  margin-bottom: 100px;
 `;
 export const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    transform: scale(0.95);
-  }
 `;
 export const ImagesContainer = styled.div`
+  position: relative;
   overflow: hidden;
   width: 180px;
   height: 265px;
   margin-bottom: 14px;
   border-radius: 8px;
+  cursor: pointer;
+  &:hover p {
+    transform: translate(0);
+    pointer-events: all;
+  }
+`;
+export const QuickView = styled.p`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 26px 0px;
+  background-color: ${props => props.theme.yellowColor};
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 `;
 export const BooksContainer = styled.ul`
   display: flex;
@@ -54,7 +76,7 @@ export const ColectionsTitle = styled.p`
 `;
 export const TitleBook = styled.p`
   margin-bottom: 4px;
-  color: ${props => props.theme.blackColor};
+  color: ${props => props.theme.titleColor};
   font-size: 16px;
   font-weight: 700;
   line-height: 18px; /* 112.5% */
@@ -80,4 +102,6 @@ export const Button = styled.button`
   margin-left: auto;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
+  background-color: #0000;
+  color: ${props => props.theme.titleColor};
 `;

@@ -26,7 +26,7 @@ export const FormContainer = styled.div`
   border-radius: 18px;
   border: 2px solid #111;
   transform: translate(-50%, -50%);
-  background-color: ${props => props.theme.backgroundMain};
+  background-color: ${props => props.theme.backgroundColor};
   text-align: center;
 `;
 export const Form = styled.form`
@@ -40,6 +40,9 @@ export const CloseIcon = styled(Close)`
   position: absolute;
   top: 31px;
   right: 31px;
+  * {
+    stroke: ${props => props.theme.titleColor};
+  }
   &:hover * {
     stroke: ${props => props.theme.purpleColor};
   }
@@ -58,23 +61,25 @@ export const Input = styled.input`
   width: 100%;
   height: 64px;
   border-radius: 40px;
-  border: 2px solid #111;
+  border: 2px solid ${props => props.theme.titleColor};
   font-size: 18px;
   font-weight: 700;
+  outline: none;
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.18px;
   padding-left: 40px;
   padding-right: 70px;
   background-color: #0000;
+  color: ${props => props.theme.titleColor};
   &:focus {
-    outline-color: ${props => props.theme.purpleColor};
+    border-color: ${props => props.theme.purpleColor};
   }
   &::placeholder {
     font-size: 18px;
     font-weight: 700;
     line-height: 24px; /* 133.333% */
     letter-spacing: -0.18px;
-    color: ${props => props.theme.blackColor};
+    color: ${props => props.theme.titleColor};
   }
   &:focus-within + label,
   &:not(:placeholder-shown) + label {
@@ -87,9 +92,9 @@ export const Submit = styled.button`
   height: 64px;
   padding: 20px 173px;
   border-radius: 40px;
-  justify-content: center;
-  background-color: ${props => props.theme.blackColor};
-  color: #f3f3f3;
+  background-color: ${props => props.theme.titleColor};
+  color: ${props => props.theme.blackColor};
+  border: none;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px; /* 133.333% */
@@ -100,6 +105,9 @@ export const IconsCase = styled.div`
   position: absolute;
   top: 21px;
   right: 35px;
+  * {
+    stroke: ${props => props.theme.titleColor};
+  }
 `;
 export const Ul = styled.ul`
   display: flex;
@@ -111,7 +119,7 @@ export const Li = styled.li`
   }
 `;
 export const NavigationLink = styled(NavLink)`
-  color: rgba(17, 17, 17, 0.5);
+  color: ${props => props.theme.blackGrayColor};
   font-size: 18px;
   font-weight: 700;
   line-height: 24px; /* 133.333% */
