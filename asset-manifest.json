@@ -1,19 +1,44 @@
 {
   "files": {
     "main.css": "/Bookshelf/static/css/main.36380e2b.css",
-    "main.js": "/Bookshelf/static/js/main.315e1851.js",
+    "main.js": "/Bookshelf/static/js/main.3453bf2f.js",
+    "static/media/action.svg": "/Bookshelf/static/media/action.3d722ed28b371fdd5c7e435e9a12b1c3.svg",
+    "static/media/booksMobile.png": "/Bookshelf/static/media/booksMobile.df726e4a6ab9e2c16a81.png",
+    "static/media/medical.svg": "/Bookshelf/static/media/medical.2daa42a622101ca1465f8c0b165a726e.svg",
+    "static/media/empty.png": "/Bookshelf/static/media/empty.13fb0f9425a4497c8eeb.png",
+    "static/media/prytula.svg": "/Bookshelf/static/media/prytula.50e9b32b86a85b000d71569ee595dca3.svg",
+    "static/media/saveChildren.svg": "/Bookshelf/static/media/saveChildren.63f7eaeab1516440ad26a4678a95cfdf.svg",
+    "static/media/hope.svg": "/Bookshelf/static/media/hope.f9cbdd54dcf9823f1f4d264a81a19772.svg",
+    "static/media/united24.svg": "/Bookshelf/static/media/united24.9fb209f2f37d1c13b24e3993cc733a2c.svg",
+    "static/media/medecins.svg": "/Bookshelf/static/media/medecins.7cf78dfd2720ecfc3e7131d15be8fec1.svg",
+    "static/media/razom.svg": "/Bookshelf/static/media/razom.77d9e6cbc2c1b849d914a44c22a07784.svg",
+    "static/media/worldVision.svg": "/Bookshelf/static/media/worldVision.f98fb0b540623f48c7f02abd0e0491d0.svg",
+    "static/media/logoDark.svg": "/Bookshelf/static/media/logoDark.d9b8741e39ee9524a10e23b9b4db4ba8.svg",
     "static/media/logoWhite.svg": "/Bookshelf/static/media/logoWhite.5d6a946e72dd9e1b8eadeae37fc8ec5c.svg",
+    "static/media/upUpPagin.svg": "/Bookshelf/static/media/upUpPagin.936b4798000b6a5d65f726d7147ab5ca.svg",
+    "static/media/gerb.svg": "/Bookshelf/static/media/gerb.486808662fc4baf9f10d9b2e525fe7fa.svg",
+    "static/media/downDownPagin.svg": "/Bookshelf/static/media/downDownPagin.62f75edb11215e08077e1f603f92f337.svg",
+    "static/media/marcet.svg": "/Bookshelf/static/media/marcet.8547246ed683457a437377b412fdf7e1.svg",
+    "static/media/upPagin.svg": "/Bookshelf/static/media/upPagin.3515b0004e8510924f4e1cf01a8724bf.svg",
+    "static/media/UpDown.svg": "/Bookshelf/static/media/UpDown.a138885d9b8656ae79653758b11973a7.svg",
     "index.html": "/Bookshelf/index.html",
+    "static/media/arrowSupportUkr.svg": "/Bookshelf/static/media/arrowSupportUkr.e5bf1e74843dd3a494ae1c846256272a.svg",
+    "static/media/downPagin.svg": "/Bookshelf/static/media/downPagin.bbafa4efdc931c57f9cf865d3b740b09.svg",
     "static/media/email.svg": "/Bookshelf/static/media/email.6a3a52b415f33de59b18baa1cba63110.svg",
+    "static/media/password.svg": "/Bookshelf/static/media/password.baad8f04890f68c3e818544abeb12c2d.svg",
+    "static/media/up.svg": "/Bookshelf/static/media/up.19d298462472de193bfc9273bd61566b.svg",
+    "static/media/trash.svg": "/Bookshelf/static/media/trash.f402ca22e24d4547a61f3b0ad86e5b6d.svg",
     "static/media/user.svg": "/Bookshelf/static/media/user.754538509c2a5f738cd66ceaee36779b.svg",
+    "static/media/menu.svg": "/Bookshelf/static/media/menu.7aeda2265a7688bc3b395f143bea1a0a.svg",
     "static/media/arrowDown.svg": "/Bookshelf/static/media/arrowDown.f4c2dd3c39cc8a17156171683de83de4.svg",
     "static/media/arrowRight.svg": "/Bookshelf/static/media/arrowRight.4411fb2f189ca7ac42ba0c7b5861e71d.svg",
     "static/media/close.svg": "/Bookshelf/static/media/close.68c7de2c54062968f3fb7819081b4c2d.svg",
+    "static/media/closeMobile.svg": "/Bookshelf/static/media/closeMobile.7a7960d7edf2c5b864a02a7d3672e396.svg",
     "main.36380e2b.css.map": "/Bookshelf/static/css/main.36380e2b.css.map",
-    "main.315e1851.js.map": "/Bookshelf/static/js/main.315e1851.js.map"
+    "main.3453bf2f.js.map": "/Bookshelf/static/js/main.3453bf2f.js.map"
   },
   "entrypoints": [
     "static/css/main.36380e2b.css",
-    "static/js/main.315e1851.js"
+    "static/js/main.3453bf2f.js"
   ]
 }
