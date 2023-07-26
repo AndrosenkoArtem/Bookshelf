@@ -49,6 +49,7 @@ export const CloseIcon = styled(Close)`
   }
 `;
 export const Title = styled.h2`
+  width: 279px;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px; /* 116.667% */
