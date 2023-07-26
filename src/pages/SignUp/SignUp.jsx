@@ -58,7 +58,7 @@ const SignUp = () => {
                 onChange={e => setUserName(e.target.value)}
                 value={userName}
                 maxLength="30"
-                autocomplete="new-password"
+                autoComplete="new-password"
               />
             </Label>
             <Label>
@@ -70,7 +70,7 @@ const SignUp = () => {
                 required="requaried"
                 onChange={e => setEmail(e.target.value)}
                 value={email}
-                autocomplete="new-password"
+                autoComplete="new-password"
               />
             </Label>
             <Label>
@@ -89,7 +89,7 @@ const SignUp = () => {
                 required="requaried"
                 onChange={e => setPassword(e.target.value)}
                 value={password}
-                autocomplete="new-password"
+                autoComplete="new-password"
               />
             </Label>
             <Submit type="submit">SIGN UP</Submit>

@@ -18,7 +18,7 @@ export const Pagination = ({ page, setPage, totalPages, books }) => {
   const theme = useSelector(selectTheme);
   const maxVisiblePages = 3;
   useEffect(() => {
-    scrollDown();
+    page !== 1 && scrollDown();
   }, [page]);
   const halfMaxVisiblePages = Math.floor(maxVisiblePages / 2);
   const normalizedPage = Math.min(
@@ -54,7 +54,7 @@ export const Pagination = ({ page, setPage, totalPages, books }) => {
         {page > 3 && (
           <Back onClick={go3Back}>
             <UpDownIcon
-              style={{ marginLeft: '24px', marginRight: '10px' }}
+              // style={{ marginLeft: '24px', marginRight: '10px' }}
               color={!theme ? '' : '#fff'}
             />
           </Back>
@@ -75,7 +75,7 @@ export const Pagination = ({ page, setPage, totalPages, books }) => {
         {totalPages - 3 >= page && (
           <Forward>
             <UpDownIcon
-              style={{ marginLeft: '10px', marginRight: '24px' }}
+              // style={{ marginLeft: '10px', marginRight: '24px' }}
               onClick={go3Forward}
               color={!theme ? '' : '#fff'}
             />

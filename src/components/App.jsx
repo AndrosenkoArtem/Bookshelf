@@ -17,9 +17,9 @@ export const App = () => {
   const dispatch = useDispatch();
   const ifRefrashing = useSelector(selectIsRefreshing);
   const theme = useSelector(selectTheme);
-  // useEffect(() => {
-  //   dispatch(refreshUser());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     !ifRefrashing && (
       <ThemeProvider theme={!theme ? lightTheme : darkTheme}>

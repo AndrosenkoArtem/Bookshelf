@@ -27,6 +27,9 @@ export const FormContainer = styled.div`
   transform: translate(-50%, -50%);
   background-color: ${props => props.theme.backgroundColor};
   text-align: center;
+  @media (max-width: 425px) {
+    padding: 40px 20px;
+  }
 `;
 export const Form = styled.form`
   display: flex;
@@ -45,15 +48,29 @@ export const CloseIcon = styled(Close)`
   &:hover * {
     stroke: ${props => props.theme.purpleColor};
   }
+  @media (max-width: 425px) {
+    top: 14px;
+    right: 14px;
+  }
 `;
 export const Label = styled.label`
   position: relative;
   width: 499px;
   &:not(:last-of-type) {
     margin-bottom: 28px;
+    @media (max-width: 425px) {
+      margin-bottom: 24px;
+    }
   }
   &:last-of-type {
     margin-bottom: 40px;
+    @media (max-width: 425px) {
+      margin-bottom: 24px;
+    }
+  }
+  @media (max-width: 425px) {
+    width: 295px;
+    height: 50px;
   }
 `;
 export const Input = styled.input`
@@ -79,12 +96,19 @@ export const Input = styled.input`
     line-height: 24px; /* 133.333% */
     letter-spacing: -0.18px;
     color: ${props => props.theme.titleColor};
+    @media (max-width: 425px) {
+      font-size: 16px;
+    }
   }
   &:focus-within + label,
   &:not(:placeholder-shown) + label {
     transform: translate(5px, -30px);
     font-size: 12px;
     color: ${props => props.theme.purpleColor};
+  }
+  @media (max-width: 425px) {
+    font-size: 16px;
+    height: 50px;
   }
 `;
 export const Submit = styled.button`
@@ -99,6 +123,11 @@ export const Submit = styled.button`
   line-height: 24px; /* 133.333% */
   letter-spacing: -0.18px;
   margin-bottom: 20px;
+  @media (max-width: 425px) {
+    padding: 0 116px;
+    font-size: 16px;
+    height: 50px;
+  }
 `;
 export const IconsCase = styled.div`
   cursor: pointer;
@@ -107,6 +136,14 @@ export const IconsCase = styled.div`
   right: 35px;
   * {
     stroke: ${props => props.theme.titleColor};
+  }
+  @media (max-width: 425px) {
+    top: 16px;
+    right: 24px;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 export const Ul = styled.ul`

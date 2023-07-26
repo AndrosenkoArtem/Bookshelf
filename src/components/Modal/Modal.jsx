@@ -24,6 +24,7 @@ import openBook from 'images/openBook.png';
 import closeBook from 'images/closeBook.png';
 import { addBooksInCatalog, deleteBookInCatalog } from 'redux/books/slice';
 import { selectTheme } from 'redux/theme/selectors';
+import { useEffect } from 'react';
 export const Modal = ({ setModalIsOpen }) => {
   const dispatch = useDispatch();
   const book = useSelector(selectBookById);
@@ -32,10 +33,18 @@ export const Modal = ({ setModalIsOpen }) => {
   const shoppingList = catalogBook.filter(book => book._id === _id);
   const theme = useSelector(selectTheme);
   const handleClose = e => {
-    e.target.nodeName === 'DIV' &&
-      e.target.className.includes('background') &&
+    if (
+      e.target.nodeName === 'DIV' &&
+      e.target.className.includes('background')
+    ) {
       setModalIsOpen(false);
+      document.body.style.overflow = '';
+    }
   };
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+  }, []);
+
   return (
     <Background className="background" onClick={handleClose}>
       <Container>
@@ -84,7 +93,13 @@ export const Modal = ({ setModalIsOpen }) => {
           </>
         )}
 
-        <CloseIconCase type="button" onClick={() => setModalIsOpen(false)}>
+        <CloseIconCase
+          type="button"
+          onClick={() => {
+            setModalIsOpen(false);
+            document.body.style.overflow = '';
+          }}
+        >
           <CloseIcon width="14px" height="14px" />
         </CloseIconCase>
       </Container>

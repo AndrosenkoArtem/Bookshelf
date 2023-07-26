@@ -22,12 +22,10 @@ export const AuthNav = () => {
       {isLoggedIn ? (
         <Auth onClick={() => setIsOpen(!isOpen)}>
           {<UserIcon />} <UserName>{user.name}</UserName>
-          {<ArrowDownIcon rotate={{ isOpen }} />}
-          {isOpen && (
-            <LogOut onClick={() => dispatch(logout())}>
-              Log out <ArrowRight />
-            </LogOut>
-          )}
+          {<ArrowDownIcon />}
+          <LogOut onClick={() => dispatch(logout())}>
+            Log out <ArrowRight />
+          </LogOut>
         </Auth>
       ) : (
         <NavigationLink to="/sign-up">

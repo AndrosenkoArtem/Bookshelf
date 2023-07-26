@@ -14,6 +14,13 @@ export const Container = styled.div`
     #fff 100%
   );
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+  @media (max-width: 425px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  @media (min-width: 768px) and (max-width: 1439px) {
+    margin-bottom: 0px;
+  }
 `;
 export const Title = styled.h2`
   color: ${props => props.theme.textColor};

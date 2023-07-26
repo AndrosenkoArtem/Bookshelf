@@ -1,6 +1,6 @@
 import { AllCategories } from 'components/HomePage/AllCategories/AllCategories';
 import { BooksList } from 'components/HomePage/BookList/BookList';
-import { Container } from './Home.styled';
+import { CategoriesSupport, Container } from './Home.styled';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { categoriesBooks, topBooks } from 'redux/books/operations';
@@ -17,17 +17,18 @@ const Home = () => {
     !currentCategories
       ? dispatch(topBooks())
       : dispatch(categoriesBooks(currentCategories));
+    document.body.style.overflow = '';
   }, [currentCategories, dispatch]);
 
   return (
     <Container>
-      <div>
+      <CategoriesSupport>
         <AllCategories
           setCurrentCategories={setCurrentCategories}
           currentCategories={currentCategories}
         />
         <SupportUkraine />
-      </div>
+      </CategoriesSupport>
       {(!currentCategories && (
         <BooksList
           setCurrentCategories={setCurrentCategories}

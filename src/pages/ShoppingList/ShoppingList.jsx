@@ -1,5 +1,5 @@
 import { SupportUkraine } from 'components/SupportUkraine/SupportUkraine';
-import { Container, Flex } from './ShoppingList.styled';
+import { Container, DisplayNone, Flex } from './ShoppingList.styled';
 import { Catalog } from 'components/ShoppingListPage/Catalog/Catalog';
 import { useEffect, useState } from 'react';
 import { Pagination } from 'components/ShoppingListPage/Pagination/Pagination';
@@ -18,11 +18,15 @@ const ShoppingList = () => {
   const endIndex = startIndex + booksPerPage;
   useEffect(() => {
     !isLoggedNn && redirect('/');
+    document.body.style.overflow = '';
   }, [isLoggedNn, redirect]);
 
   return (
     <Container>
-      <SupportUkraine />
+      <DisplayNone>
+        <SupportUkraine />
+      </DisplayNone>
+
       <Flex>
         <Catalog
           booksPerPage={booksPerPage}
