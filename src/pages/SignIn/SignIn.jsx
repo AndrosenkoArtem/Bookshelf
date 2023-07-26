@@ -20,9 +20,6 @@ import { ReactComponent as Password } from 'images/password.svg';
 import { useNavigate } from 'react-router-dom';
 import { signIn } from 'redux/auth/operations';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
-import { LiaEyeSlash } from 'react-icons/lia';
-import { LiaEyeSolid } from 'react-icons/lia';
-import { IconContext } from 'react-icons';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
