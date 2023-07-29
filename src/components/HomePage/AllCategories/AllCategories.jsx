@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
 import { Ul, Li } from './AllCategories.styled';
-import { selectCategories } from 'redux/books/selectors';
+import { selectCategories, selectIsLoading } from 'redux/books/selectors';
+import { SpinnerCategories } from 'components/Spinner/Spinner';
 
 export const AllCategories = ({ setCurrentCategories, currentCategories }) => {
   const categories = useSelector(selectCategories);
-  return (
+  const isLoading = useSelector(selectIsLoading);
+  return !isLoading ? (
     <Ul>
       <Li
         key="All categories"
@@ -23,23 +25,7 @@ export const AllCategories = ({ setCurrentCategories, currentCategories }) => {
         </Li>
       ))}
     </Ul>
+  ) : (
+    <SpinnerCategories color="#4F2EE8" />
   );
 };
-
-// import { Ul, P } from './AllCategories.styled';
-
-// export const AllCategories = ({ books, setCategories }) => {
-//   return (
-//     <Ul>
-//       <P onClick={() => setCategories('All categories')}>All categories</P>
-//       {books.map(category => (
-//         <P
-//           key={category.list_name}
-//           onClick={() => setCategories(category.list_name)}
-//         >
-//           {category.list_name}
-//         </P>
-//       ))}
-//     </Ul>
-//   );
-// };
